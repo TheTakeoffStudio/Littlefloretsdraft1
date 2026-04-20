@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Florets School — Every Child Matters</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CSS VARIABLES & RESET
+============================================ */
+:root {
+  --pink: #e94e77;
+  --pink-light: #fce8ed;
+  --pink-dark: #c73860;
+  --blue: #1f3c88;
+  --blue-light: #e8edf8;
+  --blue-dark: #152a61;
+  --gold: #f5a623;
+  --white: #ffffff;
+  --off-white: #fafbff;
+  --gray-100: #f4f6fb;
+  --gray-200: #e8ecf4;
+  --gray-500: #8892a4;
+  --gray-700: #4a5568;
+  --gray-900: #1a202c;
+  --shadow-sm: 0 2px 12px rgba(31,60,136,0.08);
+  --shadow-md: 0 8px 32px rgba(31,60,136,0.12);
+  --shadow-lg: 0 20px 60px rgba(31,60,136,0.16);
+  --shadow-pink: 0 8px 32px rgba(233,78,119,0.25);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--gray-900);
+  background: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-alt {
+  background: var(--gray-100);
+}
+
+.section-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.section-pink {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+  color: var(--white);
+}
+
+/* ============================================
+   SECTION HEADERS
+============================================ */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--pink-light);
+  color: var(--pink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.section-badge.white {
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-title.white { color: var(--white); }
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-subtitle.white { color: rgba(255,255,255,0.8); }
+
+.title-accent {
+  color: var(--pink);
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pink), var(--blue));
+  border-radius: 4px;
+  margin: 16px auto;
+}
+
+/* ============================================
+   BUTTONS
+============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+.btn-pink {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-pink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(233,78,119,0.4);
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-blue:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(31,60,136,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--white);
+}
+
+.btn-sm {
+  padding: 10px 22px;
+  font-size: 0.82rem;
+}
+
+/* ============================================
+   TOP BAR
+============================================ */
+.top-bar {
+  background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue) 100%);
+  color: rgba(255,255,255,0.9);
+  padding: 9px 0;
+  font-size: 0.78rem;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.top-bar-item:hover { color: var(--pink-light); }
+
+.top-bar-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.timing-badge {
+  background: rgba(255,255,255,0.12);
+  padding: 3px 12px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================================
+   NAVBAR
+============================================ */
+.navbar {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(31,60,136,0.1);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-pink);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.logo-tagline {
+  font-size: 0.62rem;
+  color: var(--pink);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  border: none;
+  background: none;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 2.5px;
+  background: var(--blue);
+  border-radius: 4px;
+  transition: var(--transition);
+  display: block;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  padding: 7px 12px;
+  border-radius: 8px;
+  transition: var(--transition);
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--pink);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--blue);
+  background: var(--blue-light);
+}
+
+.nav-link:hover::after { transform: scaleX(1); }
+.nav-link.active { color: var(--pink); }
+
+.nav-cta {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   HERO SECTION
+============================================ */
+.hero {
+  background: linear-gradient(135deg, #0d1f5c 0%, #1f3c88 40%, #2a50b0 70%, #1a3070 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 60px;
+}
+
+/* Decorative shapes */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(233,78,119,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.07;
+  background: var(--white);
+}
+
+.hero-shape-1 { width: 300px; height: 300px; top: 10%; right: 15%; }
+.hero-shape-2 { width: 150px; height: 150px; top: 60%; right: 30%; }
+.hero-shape-3 { width: 200px; height: 200px; bottom: 10%; left: 5%; }
+
+/* Floating elements */
+.hero-float {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  font-size: 0.75rem;
+  color: var(--white);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-float-1 { top: 20%; right: 5%; animation-delay: 0s; }
+.hero-float-2 { bottom: 30%; right: 8%; animation-delay: 1.5s; }
+.hero-float-3 { top: 35%; right: 22%; animation-delay: 0.8s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--pink);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.hero-title-accent {
+  color: var(--pink);
+  display: block;
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-feat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.hero-feat-check {
+  width: 18px;
+  height: 18px;
+  background: var(--pink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.hero-stat {}
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.hero-stat-num span {
+  color: var(--pink);
+}
+
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   ABOUT SECTION
+============================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-img-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--pink-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img-placeholder {
+  font-size: 6rem;
+  opacity: 0.4;
+}
+
+.about-badge-float {
+  position: absolute;
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-badge-float-1 {
+  bottom: -20px;
+  right: -20px;
+}
+
+.about-badge-float-2 {
+  top: -16px;
+  left: -16px;
+}
+
+.about-badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.bg-pink { background: var(--pink-light); }
+.bg-blue { background: var(--blue-light); }
+
+.about-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-badge-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.about-badge-label {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.about-content {}
+
+.about-text {
+  font-size: 1rem;
+  color: var(--gray-700);
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--gray-100);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--pink);
+  transition: var(--transition);
+}
+
+.about-highlight:hover {
+  background: var(--pink-light);
+  transform: translateX(4px);
+}
+
+.highlight-icon { font-size: 1.3rem; flex-shrink: 0; }
+.highlight-text { font-size: 0.82rem; font-weight: 500; color: var(--gray-700); }
+
+/* ============================================
+   CLASSES CARDS
+============================================ */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.class-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.class-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pink), var(--blue));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.class-card:hover::before { transform: scaleX(1); }
+
+.class-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.class-age {
+  display: inline-block;
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+.class-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.class-desc {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* ============================================
+   WHY CHOOSE US
+============================================ */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--pink);
+}
+
+.why-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 18px;
+  transition: var(--transition);
+}
+
+.why-card:hover .why-icon { transform: scale(1.1) rotate(-5deg); }
+
+.icon-bg-1 { background: var(--pink-light); }
+.icon-bg-2 { background: var(--blue-light); }
+.icon-bg-3 { background: #fff3e0; }
+.icon-bg-4 { background: #e8f5e9; }
+.icon-bg-5 { background: #f3e5f5; }
+.icon-bg-6 { background: #e0f2f1; }
+
+.why-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.why-desc {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  line-height: 1.7;
+}
+
+/* ============================================
+   ACADEMICS
+============================================ */
+.academics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.academics-content { }
+
+.academics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.acad-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.acad-item:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+}
+
+.acad-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.acad-text {}
+.acad-title { font-size: 0.9rem; font-weight: 600; color: var(--blue); margin-bottom: 4px; }
+.acad-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
+
+.academics-visual {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  color: var(--white);
+  position: sticky;
+  top: 100px;
+}
+
+.acad-visual-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.acad-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acad-tag {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+  padding: 7px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.acad-tag:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+.acad-nep {
+  margin-top: 24px;
+  padding: 18px;
+  background: rgba(233,78,119,0.2);
+  border: 1px solid rgba(233,78,119,0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================================
+   LABS SECTION
+============================================ */
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.lab-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink), rgba(255,255,255,0.5));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.lab-card:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.lab-card:hover::after { transform: scaleX(1); }
+
+.lab-emoji { font-size: 2.5rem; margin-bottom: 14px; }
+.lab-title { font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+.lab-desc { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+/* ============================================
+   EXTRA-CURRICULAR
+============================================ */
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.extra-item {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gray-200);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.extra-item:hover {
+  border-color: var(--pink);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-pink);
+}
+
+.extra-emoji { font-size: 2.4rem; margin-bottom: 12px; }
+.extra-title { font-size: 0.83rem; font-weight: 600; color: var(--blue); }
+
+/* ============================================
+   TESTIMONIALS
+============================================ */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.testi-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 30px 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  position: relative;
+  transition: var(--transition);
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.testi-quote {
+  font-size: 3.5rem;
+  color: var(--pink-light);
+  font-family: var(--font-display);
+  line-height: 1;
+  margin-bottom: 12px;
+  color: var(--pink);
+  opacity: 0.3;
+}
+
+.testi-text {
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--blue) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.testi-child {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+}
+
+/* ============================================
+   AWARDS SECTION
+============================================ */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.award-card {
+  text-align: center;
+  padding: 32px 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.award-card:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-6px);
+}
+
+.award-trophy { font-size: 3rem; margin-bottom: 16px; }
+.award-year {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.award-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.award-org { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+
+/* ============================================
+   BRANCHES SECTION
+============================================ */
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.branch-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  transition: var(--transition);
+}
+
+.branch-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.branch-header {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  padding: 24px 28px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.branch-header::before {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 50%;
+}
+
+.branch-num {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 6px;
+}
+
+.branch-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.branch-area {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.branch-pin {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.branch-body { padding: 24px 28px; }
+
+.branch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.branch-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.83rem;
+  color: var(--gray-700);
+}
+
+.branch-info-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.branch-info-text { line-height: 1.5; }
+.branch-info-label { font-size: 0.68rem; color: var(--gray-500); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.branch-info-val { font-weight: 500; }
+
+/* ============================================
+   CONTACT SECTION
+============================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-info { }
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--pink-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contact-info-text { }
+.contact-info-label { font-size: 0.72rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.contact-info-val { font-size: 0.9rem; font-weight: 500; color: var(--gray-900); line-height: 1.5; }
+
+.contact-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.form-sub { font-size: 0.83rem; color: var(--gray-500); margin-bottom: 28px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 7px;
+  letter-spacing: 0.3px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--gray-900);
+  background: var(--white);
+  transition: var(--transition);
+  outline: none;
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(233,78,119,0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--gray-500); font-size: 0.83rem; }
+
+.form-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+.form-submit {
+  width: 100%;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-pink);
+}
+
+.form-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(233,78,119,0.4);
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+.footer {
+  background: var(--gray-900);
+  color: rgba(255,255,255,0.8);
+  padding: 70px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-brand { }
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.footer-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--pink), var(--blue));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.footer-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-about {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 20px;
+}
+
+.footer-motto {
+  background: rgba(233,78,119,0.15);
+  border: 1px solid rgba(233,78,119,0.25);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-size: 0.75rem;
+  color: var(--pink-light);
+  line-height: 1.7;
+}
+
+.footer-col-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-link {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-link::before { content: '→'; opacity: 0; transition: var(--transition); }
+.footer-link:hover { color: var(--pink); padding-left: 4px; }
+.footer-link:hover::before { opacity: 1; }
+
+.footer-contact-items { display: flex; flex-direction: column; gap: 12px; }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-contact-icon { flex-shrink: 0; margin-top: 1px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-text {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-bottom-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-badge {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.68rem;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+/* ============================================
+   ANNOUNCEMENT STRIP
+============================================ */
+.announce-strip {
+  background: var(--pink);
+  color: var(--white);
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.announce-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.announce-dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+}
+
+/* ============================================
+   SCROLL TOP
+============================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 46px;
+  height: 46px;
+  background: var(--pink);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-pink);
+  z-index: 999;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.scroll-top:hover {
+  transform: translateY(-4px);
+  background: var(--pink-dark);
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap { aspect-ratio: 16/7; }
+  .academics-grid { grid-template-columns: 1fr; }
+  .academics-visual { position: static; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  
+  .top-bar-inner { flex-direction: column; gap: 6px; }
+  .top-bar-left { justify-content: center; gap: 12px; }
+  .top-bar-right { justify-content: center; }
+  .top-bar-item:last-of-type { display: none; }
+
+  .navbar-inner { padding: 10px 0; }
+  .nav-toggle { display: flex; }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: var(--shadow-md);
+    border-top: 1px solid var(--gray-200);
+  }
+  
+  .nav-links.open { display: flex; }
+  .nav-link { padding: 10px 14px; width: 100%; }
+  .nav-cta { display: none; }
+
+  .hero { min-height: auto; padding: 100px 0 60px; }
+  .hero-float { display: none; }
+  .hero-stats { gap: 20px; }
+  
+  .about-highlights { grid-template-columns: 1fr; }
+  .about-badge-float-1 { display: none; }
+  .about-badge-float-2 { display: none; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form { padding: 28px 20px; }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .branches-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero-features { flex-direction: column; gap: 10px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-stats { justify-content: center; }
+  .classes-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .extra-grid { grid-template-columns: repeat(3, 1fr); }
+  .awards-grid { grid-template-columns: 1fr 1fr; }
+  .labs-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   NAVBAR STICKY POSITION FIX
+============================================ */
+.navbar { position: sticky; top: 0; }
+
+/* Nav toggle checkbox trick */
+#nav-toggle { display: none; }
+#nav-toggle:checked ~ .nav-links { display: flex; }
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.text-center { text-align: center; }
+.mt-4 { margin-top: 16px; }
+.mt-8 { margin-top: 32px; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+
+<!-- ==================== TOP BAR ==================== -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span class="top-bar-item">
+          <span>📞</span>
+          <span>+91-8125767309 / 8885679606</span>
+        </span>
+        <span class="top-bar-item">
+          <span>✉️</span>
+          <span>littleflorets21@gmail.com</span>
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <span class="timing-badge">
+          <span>🕘</span>
+          <span>Mon — Sat: 9:00 AM — 05:00 PM</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="home">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon">🌸</div>
+        <div class="logo-text">
+          <span class="logo-name">Little Florets</span>
+          <span class="logo-tagline">School • KPHB</span>
+        </div>
+      </a>
+
+      <label for="nav-toggle" class="nav-toggle">
+        <span></span><span></span><span></span>
+      </label>
+      <input type="checkbox" id="nav-toggle">
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#academics" class="nav-link">Academics</a></li>
+        <li><a href="#labs" class="nav-link">Labs</a></li>
+        <li><a href="#extra" class="nav-link">Activities</a></li>
+        <li><a href="#testimonials" class="nav-link">Parents Say</a></li>
+        <li><a href="#branches" class="nav-link">Branches</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-pink btn-sm">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== ANNOUNCEMENT ==================== -->
+<div class="announce-strip">
+  <div class="container">
+    <div class="announce-inner">
+      <span class="announce-dot"></span>
+      <span>🎉 Admissions Open for 2025-26 Academic Year</span>
+      <span class="announce-dot"></span>
+      <span>NEP 2020 & NCF 2023 Aligned Curriculum</span>
+      <span class="announce-dot"></span>
+      <span>🏆 Awarded Top 100 Preschools in India</span>
+      <span class="announce-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero">
+  <div class="hero-shapes">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+  </div>
+
+  <div class="hero-float hero-float-1">🏆 Top 100 Preschools · India 2024</div>
+  <div class="hero-float hero-float-2">👨‍🏫 Experienced Educators</div>
+  <div class="hero-float hero-float-3">📱 Parent Communication App</div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          NEP 2020 Aligned · Premium Education
+        </div>
+        <h1 class="hero-title">
+          Every Child
+          <span class="hero-title-accent">Matters.</span>
+        </h1>
+        <p class="hero-sub">Premium education with holistic development — nurturing curious minds, compassionate hearts, and creative souls.</p>
+
+        <div class="hero-features">
+          <div class="hero-feat">
+            <div class="hero-feat-check">✓</div>
+            <span>Holistic Development</span>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-check">✓</div>
+            <span>NEP 2020 Curriculum</span>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-check">✓</div>
+            <span>Safe Environment</span>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-check">✓</div>
+            <span>AI-Powered Learning</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-pink">
+            <span>📋</span> Apply for Admission
+          </a>
+          <a href="#about" class="btn btn-outline">
+            <span>▶</span> Discover More
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">3<span>+</span></div>
+            <div class="hero-stat-label">Branches in KPHB</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">500<span>+</span></div>
+            <div class="hero-stat-label">Happy Families</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">15<span>+</span></div>
+            <div class="hero-stat-label">Years of Excellence</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">6<span>+</span></div>
+            <div class="hero-stat-label">Learning Labs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT SECTION ==================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">🏫</div>
+        </div>
+        <div class="about-badge-float about-badge-float-1">
+          <div class="about-badge-icon bg-pink">🏆</div>
+          <div class="about-badge-text">
+            <span class="about-badge-num">Top 100</span>
+            <span class="about-badge-label">Preschools · India</span>
+          </div>
+        </div>
+        <div class="about-badge-float about-badge-float-2">
+          <div class="about-badge-icon bg-blue">📚</div>
+          <div class="about-badge-text">
+            <span class="about-badge-num">NEP 2020</span>
+            <span class="about-badge-label">Aligned Curriculum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-header" style="text-align:left; margin-bottom:28px;">
+          <div class="section-badge">About Our School</div>
+          <h2 class="section-title">Where Learning<br>Meets <span class="title-accent">Joy</span></h2>
+          <div class="divider" style="margin:16px 0;"></div>
+        </div>
+        <p class="about-text">
+          Little Florets School is a premier early childhood education institution located in the heart of KPHB, Hyderabad. We are committed to providing a world-class educational experience that fosters holistic development in every child.
+        </p>
+        <p class="about-text">
+          Our innovative approach blends the best of NEP 2020 guidelines with Montessori principles, activity-based learning, and cutting-edge technologies like AI, AR/VR to create future-ready learners from the very beginning.
+        </p>
+
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <span class="highlight-icon">📘</span>
+            <span class="highlight-text">NEP 2020 & NCF 2023 Aligned</span>
+          </div>
+          <div class="about-highlight">
+            <span class="highlight-icon">🌱</span>
+            <span class="highlight-text">Holistic Child Development</span>
+          </div>
+          <div class="about-highlight">
+            <span class="highlight-icon">🛡️</span>
+            <span class="highlight-text">Safe & Child-Friendly</span>
+          </div>
+          <div class="about-highlight">
+            <span class="highlight-icon">🤖</span>
+            <span class="highlight-text">AI-Powered Learning Tools</span>
+          </div>
+          <div class="about-highlight">
+            <span class="highlight-icon">🎨</span>
+            <span class="highlight-text">Creative Arts Integration</span>
+          </div>
+          <div class="about-highlight">
+            <span class="highlight-icon">📱</span>
+            <span class="highlight-text">Digital Parent Connect</span>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;">
+          <a href="#contact" class="btn btn-blue">Schedule a School Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLASSES SECTION ==================== -->
+<section class="section section-alt" id="classes">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Our Classes</div>
+      <h2 class="section-title">Programs <span class="title-accent">Tailored</span> For Every Age</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">From playgroup to primary — each stage is designed to build foundational skills with love and expertise.</p>
+    </div>
+
+    <div class="classes-grid">
+      <div class="class-card">
+        <span class="class-emoji">🍼</span>
+        <span class="class-age">2.5+ Years</span>
+        <h3 class="class-title">Play Group</h3>
+        <p class="class-desc">A nurturing first-step into school life. Children explore, play, and build social bonds in a safe and warm environment.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">🌟</span>
+        <span class="class-age">3+ Years</span>
+        <h3 class="class-title">Nursery / Pre-KG</h3>
+        <p class="class-desc">Structured play-based learning introducing phonics, numbers, and creative activities to spark curiosity and confidence.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">🎒</span>
+        <span class="class-age">4+ Years</span>
+        <h3 class="class-title">PP I / LKG</h3>
+        <p class="class-desc">Language development, number sense, and social skills — all delivered through engaging, hands-on activities and stories.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">✏️</span>
+        <span class="class-age">5+ Years</span>
+        <h3 class="class-title">PP II / UKG</h3>
+        <p class="class-desc">Pre-reading, writing readiness, and mathematical thinking — building a strong foundation for formal education ahead.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">📖</span>
+        <span class="class-age">6+ Years</span>
+        <h3 class="class-title">Class 1</h3>
+        <p class="class-desc">Formal literacy and numeracy in an engaging environment, aligned with NEP 2020 experiential learning frameworks.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">🔬</span>
+        <span class="class-age">7+ Years</span>
+        <h3 class="class-title">Class 2</h3>
+        <p class="class-desc">Deepening comprehension, problem-solving, and scientific thinking through project-based, collaborative learning.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-emoji">🚀</span>
+        <span class="class-age">8+ Years</span>
+        <h3 class="class-title">Class 3</h3>
+        <p class="class-desc">Critical thinking, communication excellence, and creative expression — preparing students for the world ahead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Why Little Florets</div>
+      <h2 class="section-title">The <span class="title-accent">Difference</span> We Make</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Our world-class facilities, dedicated educators, and innovative approach set us apart.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon icon-bg-1">🏫</div>
+        <h3 class="why-title">Child-Friendly Classrooms</h3>
+        <p class="why-desc">Thoughtfully designed spaces that inspire creativity and make every child feel safe and welcome.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-bg-2">🛝</div>
+        <h3 class="why-title">Indoor & Outdoor Play</h3>
+        <p class="why-desc">Balanced play environments that promote physical development and imaginative exploration.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-bg-3">🚌</div>
+        <h3 class="why-title">Transport Facility</h3>
+        <p class="why-desc">Safe, GPS-tracked school transport with trained staff to ensure every child's safe commute.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-bg-4">📱</div>
+        <h3 class="why-title">Parent Communication App</h3>
+        <p class="why-desc">Stay connected — real-time updates on attendance, learning, events, and school news.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-bg-5">👩‍🏫</div>
+        <h3 class="why-title">Experienced Educators</h3>
+        <p class="why-desc">Passionate, trained teachers who understand child psychology and nurture every learner with love.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-bg-6">🛡️</div>
+        <h3 class="why-title">Child Safety First</h3>
+        <p class="why-desc">CCTV surveillance, safe premises, and strict protocols ensuring every child's wellbeing always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ACADEMICS ==================== -->
+<section class="section section-alt" id="academics">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Academics</div>
+      <h2 class="section-title">Our <span class="title-accent">Curriculum</span> & Approach</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="academics-grid">
+      <div class="academics-content">
+        <div class="academics-list">
+          <div class="acad-item">
+            <div class="acad-icon">📘</div>
+            <div class="acad-text">
+              <div class="acad-title">NEP 2020 & NCF 2023 Aligned</div>
+              <div class="acad-desc">Fully aligned with India's National Education Policy — focusing on foundational literacy, numeracy, and experiential learning from the ground up.</div>
+            </div>
+          </div>
+          <div class="acad-item">
+            <div class="acad-icon">🎭</div>
+            <div class="acad-text">
+              <div class="acad-title">Activity-Based Learning</div>
+              <div class="acad-desc">Children learn through doing — projects, games, storytelling, and real-world explorations make concepts stick naturally.</div>
+            </div>
+          </div>
+          <div class="acad-item">
+            <div class="acad-icon">🗣️</div>
+            <div class="acad-text">
+              <div class="acad-title">English Communication Focus</div>
+              <div class="acad-desc">Dedicated phonics programs, oral communication labs, and storytelling sessions to build confident English speakers.</div>
+            </div>
+          </div>
+          <div class="acad-item">
+            <div class="acad-icon">🔬</div>
+            <div class="acad-text">
+              <div class="acad-title">Math & Science Labs</div>
+              <div class="acad-desc">Hands-on lab sessions using Montessori materials, manipulatives, and experiments that make abstract concepts tangible.</div>
+            </div>
+          </div>
+          <div class="acad-item">
+            <div class="acad-icon">🤖</div>
+            <div class="acad-text">
+              <div class="acad-title">Technology Integration</div>
+              <div class="acad-desc">AI Robo Tutor, AR/VR learning experiences, and digital literacy woven seamlessly into everyday curriculum.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="academics-visual">
+        <div class="acad-visual-title">📋 Our Curriculum Pillars</div>
+        <div class="acad-tags">
+          <span class="acad-tag">Foundational Literacy</span>
+          <span class="acad-tag">Numeracy Skills</span>
+          <span class="acad-tag">Critical Thinking</span>
+          <span class="acad-tag">Creative Arts</span>
+          <span class="acad-tag">Social-Emotional Learning</span>
+          <span class="acad-tag">Physical Education</span>
+          <span class="acad-tag">English Phonics</span>
+          <span class="acad-tag">Environmental Awareness</span>
+          <span class="acad-tag">Digital Literacy</span>
+          <span class="acad-tag">Values & Ethics</span>
+          <span class="acad-tag">Mother Tongue</span>
+          <span class="acad-tag">STEM Integration</span>
+        </div>
+        <div class="acad-nep">
+          <span>🏅</span>
+          <span>Proudly implementing India's National Education Policy 2020 — building the future, one child at a time.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LABS SECTION ==================== -->
+<section class="section section-blue" id="labs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge white">Our Labs</div>
+      <h2 class="section-title white">World-Class <span class="title-accent">Learning Labs</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle white">State-of-the-art facilities designed to ignite curiosity and make learning an adventure.</p>
+    </div>
+
+    <div class="labs-grid">
+      <div class="lab-card">
+        <div class="lab-emoji">🗣️</div>
+        <h3 class="lab-title">Communication Lab</h3>
+        <p class="lab-desc">Dedicated space for phonics, storytelling, public speaking, and English communication development for confident, expressive learners.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-emoji">🔬</div>
+        <h3 class="lab-title">Science Lab</h3>
+        <p class="lab-desc">Age-appropriate experiments that make children curious about the world — from plants and animals to simple physics and chemistry concepts.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-emoji">🔢</div>
+        <h3 class="lab-title">Math Lab</h3>
+        <p class="lab-desc">Hands-on Montessori math materials, puzzles, and manipulatives that make numbers fun and build strong mathematical foundations.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-emoji">🤖</div>
+        <h3 class="lab-title">AI Robo Tutor</h3>
+        <p class="lab-desc">Meet Robo — our AI-powered tutor that personalizes learning journeys, making education smarter and more engaging for every child.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-emoji">🎨</div>
+        <h3 class="lab-title">Montessori Lab</h3>
+        <p class="lab-desc">Authentic Montessori materials and a prepared environment that promotes independence, self-paced learning, and intrinsic motivation.</p>
+      </div>
+      <div class="lab-card">
+        <div class="lab-emoji">🥽</div>
+        <h3 class="lab-title">AR/VR Learning</h3>
+        <p class="lab-desc">Immersive augmented and virtual reality experiences that take children on field trips to space, ocean depths, and ancient civilizations — all from the classroom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EXTRA-CURRICULAR ==================== -->
+<section class="section" id="extra">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Beyond Classroom</div>
+      <h2 class="section-title">Extra-Curricular <span class="title-accent">Activities</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">A rich tapestry of activities that build character, teamwork, and hidden talents in every child.</p>
+    </div>
+
+    <div class="extra-grid">
+      <div class="extra-item">
+        <div class="extra-emoji">🏃</div>
+        <div class="extra-title">Kho-Kho</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🤼</div>
+        <div class="extra-title">Kabaddi</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🧘</div>
+        <div class="extra-title">Yoga</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🤸</div>
+        <div class="extra-title">Gymnastics</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">💃</div>
+        <div class="extra-title">Western Dance</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🪁</div>
+        <div class="extra-title">Classical Dance</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🎭</div>
+        <div class="extra-title">Cultural Fest</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🚌</div>
+        <div class="extra-title">Field Trips</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🎨</div>
+        <div class="extra-title">Art & Craft</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🎵</div>
+        <div class="extra-title">Music</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">📸</div>
+        <div class="extra-title">Photography</div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-emoji">🌱</div>
+        <div class="extra-title">Gardening</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Parents Say</div>
+      <h2 class="section-title">Voices of <span class="title-accent">Happy Families</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">The trust of our parent community is our greatest achievement.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">My daughter absolutely loves going to Little Florets every day. The teachers are incredibly caring and the curriculum is so well-designed. I've seen remarkable growth in her communication and confidence in just 6 months!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-child">Mother of Aanya, UKG · KPHB Branch</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The AR/VR lab and AI Robo Tutor are absolutely amazing. My son comes home excited every single day, talking about what he learned. The balance of academics and fun activities is just perfect.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rahul Reddy</div>
+            <div class="testi-child">Father of Arjun, Class 1 · Gopal Nagar</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">What sets Little Florets apart is how they truly treat every child as an individual. The parent communication app keeps us updated in real-time. We couldn't have asked for a better school for our twins!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sunita & Vikram Nair</div>
+            <div class="testi-child">Parents of twins, LKG · KPHB 7th Phase</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The Montessori-based approach has worked wonders for our shy child. She is now so expressive, participates in cultural programs, and her English has improved dramatically. Truly holistic education!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div>
+            <div class="testi-name">Anitha Krishnan</div>
+            <div class="testi-child">Mother of Kavya, Nursery · Gokul Plots</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The school bus service is very punctual and the staff are very attentive. The CCTV cameras and security measures give us complete peace of mind. We trust Little Florets completely with our son.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Mohammed Imran</div>
+            <div class="testi-child">Father of Zaid, Class 2 · KPHB Branch</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">From the very first day, my child felt at home. The yoga and dance activities have improved his focus and discipline. I'm so proud of how much he has grown as a person at Little Florets!</p>
+        <div class="testi-author">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">Deepa Venkatesh</div>
+            <div class="testi-child">Mother of Rohan, PP I · Gopal Nagar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AWARDS ==================== -->
+<section class="section section-pink" id="awards">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge white">Recognition</div>
+      <h2 class="section-title white">Awards & <span style="color:rgba(255,255,255,0.8); font-style:italic;">Achievements</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle white">Our commitment to excellence has earned recognition from the most prestigious institutions in education.</p>
+    </div>
+
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-trophy">🏆</div>
+        <div class="award-year">2024</div>
+        <div class="award-title">Top 100 Preschools in India</div>
+        <div class="award-org">Education World Magazine</div>
+      </div>
+      <div class="award-card">
+        <div class="award-trophy">🥇</div>
+        <div class="award-year">2023</div>
+        <div class="award-title">Education Excellence Award</div>
+        <div class="award-org">Telangana Education Board</div>
+      </div>
+      <div class="award-card">
+        <div class="award-trophy">⭐</div>
+        <div class="award-year">2023</div>
+        <div class="award-title">Silicon India Recognition</div>
+        <div class="award-org">Silicon India Magazine</div>
+      </div>
+      <div class="award-card">
+        <div class="award-trophy">🎖️</div>
+        <div class="award-year">2022</div>
+        <div class="award-title">Best Innovative School</div>
+        <div class="award-org">ASSOCHAM Education Summit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== BRANCHES ==================== -->
+<section class="section" id="branches">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Our Branches</div>
+      <h2 class="section-title">Find a Branch <span class="title-accent">Near You</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Three conveniently located campuses in KPHB, Hyderabad — each delivering the same world-class Little Florets experience.</p>
+    </div>
+
+    <div class="branches-grid">
+      <!-- Branch 1 -->
+      <div class="branch-card">
+        <div class="branch-header">
+          <div class="branch-num">Branch 01</div>
+          <div class="branch-name">Gokul Plots Campus</div>
+          <div class="branch-area">KPHB IX Phase, Hyderabad</div>
+          <div class="branch-pin">📍</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-info">
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📍</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Address</div>
+                <div class="branch-info-val">Gokul Plots, KPHB IX Phase, Kukatpally, Hyderabad</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📞</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Phone</div>
+                <div class="branch-info-val">+91-8125767309</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">✉️</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Email</div>
+                <div class="branch-info-val">littleflorets21@gmail.com</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">🕘</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Timings</div>
+                <div class="branch-info-val">Mon – Sat: 9:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2 -->
+      <div class="branch-card">
+        <div class="branch-header">
+          <div class="branch-num">Branch 02</div>
+          <div class="branch-name">Gopal Nagar Campus</div>
+          <div class="branch-area">KPHB IX Phase, Hyderabad</div>
+          <div class="branch-pin">📍</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-info">
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📍</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Address</div>
+                <div class="branch-info-val">Gopal Nagar Society, KPHB IX Phase, Kukatpally, Hyderabad</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📞</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Phone</div>
+                <div class="branch-info-val">+91-8885679606</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">✉️</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Email</div>
+                <div class="branch-info-val">littleflorets21@gmail.com</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">🕘</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Timings</div>
+                <div class="branch-info-val">Mon – Sat: 9:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 3 -->
+      <div class="branch-card">
+        <div class="branch-header">
+          <div class="branch-num">Branch 03</div>
+          <div class="branch-name">7th Phase Campus</div>
+          <div class="branch-area">KPHB 7th Phase, Hyderabad</div>
+          <div class="branch-pin">📍</div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-info">
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📍</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Address</div>
+                <div class="branch-info-val">KPHB 7th Phase, Kukatpally Housing Board Colony, Hyderabad</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">📞</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Phone</div>
+                <div class="branch-info-val">+91-8125767309</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">✉️</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Email</div>
+                <div class="branch-info-val">littleflorets21@gmail.com</div>
+              </div>
+            </div>
+            <div class="branch-info-item">
+              <div class="branch-info-icon">🕘</div>
+              <div class="branch-info-text">
+                <div class="branch-info-label">Timings</div>
+                <div class="branch-info-val">Mon – Sat: 9:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Get In Touch</div>
+      <h2 class="section-title">Begin Your Child's <span class="title-accent">Journey</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Reach out to us today and schedule a campus visit — we'd love to meet your family.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-header" style="text-align:left; margin-bottom: 0;">
+          <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--blue); margin-bottom:8px;">We're Here For You</h3>
+          <p style="font-size:0.85rem; color:var(--gray-500);">Have questions? Our admissions team is always ready to help you find the right program for your child.</p>
+        </div>
+
+        <div class="contact-info-items">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div class="contact-info-text">
+              <div class="contact-info-label">Phone Numbers</div>
+              <div class="contact-info-val">+91-8125767309<br>+91-8885679606</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉️</div>
+            <div class="contact-info-text">
+              <div class="contact-info-label">Email Address</div>
+              <div class="contact-info-val">littleflorets21@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div class="contact-info-text">
+              <div class="contact-info-label">Main Campus</div>
+              <div class="contact-info-val">Gokul Plots, KPHB IX Phase,<br>Kukatpally, Hyderabad</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🕘</div>
+            <div class="contact-info-text">
+              <div class="contact-info-label">Office Hours</div>
+              <div class="contact-info-val">Monday – Saturday<br>9:00 AM – 5:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Apply for Admission</div>
+        <p class="form-sub">Fill in your details and our team will contact you within 24 hours.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Parent / Guardian Name *</label>
+            <input type="text" class="form-input" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Child's Name *</label>
+            <input type="text" class="form-input" placeholder="Child's name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mobile Number *</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Class Interested In</label>
+            <select class="form-select">
+              <option value="">Select program</option>
+              <option>Play Group (2.5+ Years)</option>
+              <option>Nursery / Pre-KG (3+ Years)</option>
+              <option>PP I / LKG (4+ Years)</option>
+              <option>PP II / UKG (5+ Years)</option>
+              <option>Class 1 (6+ Years)</option>
+              <option>Class 2 (7+ Years)</option>
+              <option>Class 3 (8+ Years)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Branch</label>
+            <select class="form-select">
+              <option value="">Select branch</option>
+              <option>Gokul Plots – KPHB IX Phase</option>
+              <option>Gopal Nagar – KPHB IX Phase</option>
+              <option>KPHB 7th Phase</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message / Questions</label>
+          <textarea class="form-textarea" placeholder="Tell us about your child or any questions you have..."></textarea>
+        </div>
+
+        <button type="button" class="form-submit">
+          🎓 Submit Admission Enquiry
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">🌸</div>
+          <div class="footer-logo-name">Little Florets School</div>
+        </div>
+        <p class="footer-about">
+          A premier early childhood education institution in KPHB, Hyderabad. We nurture curious minds, compassionate hearts, and creative souls through world-class, NEP 2020-aligned education.
+        </p>
+        <div class="footer-motto">
+          ✨ NEP 2020 Curriculum &nbsp;|&nbsp; Value-Based Education &nbsp;|&nbsp; Child Safety First
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#about" class="footer-link">About Us</a></li>
+          <li><a href="#classes" class="footer-link">Our Classes</a></li>
+          <li><a href="#academics" class="footer-link">Academics</a></li>
+          <li><a href="#labs" class="footer-link">Learning Labs</a></li>
+          <li><a href="#extra" class="footer-link">Activities</a></li>
+          <li><a href="#testimonials" class="footer-link">Parents Say</a></li>
+          <li><a href="#contact" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Our Branches</div>
+        <ul class="footer-links">
+          <li><a href="#branches" class="footer-link">Gokul Plots, KPHB IX</a></li>
+          <li><a href="#branches" class="footer-link">Gopal Nagar, KPHB IX</a></li>
+          <li><a href="#branches" class="footer-link">KPHB 7th Phase</a></li>
+        </ul>
+        <div style="margin-top: 24px;">
+          <div class="footer-col-title">Programs</div>
+          <ul class="footer-links">
+            <li><span class="footer-link">Play Group</span></li>
+            <li><span class="footer-link">Nursery / Pre-KG</span></li>
+            <li><span class="footer-link">LKG / UKG</span></li>
+            <li><span class="footer-link">Class 1, 2 & 3</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact Us</div>
+        <div class="footer-contact-items">
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <span>+91-8125767309<br>+91-8885679606</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span>
+            <span>littleflorets21@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <span>KPHB IX Phase & 7th Phase,<br>Kukatpally, Hyderabad</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">🕘</span>
+            <span>Mon – Sat: 9:00 AM – 5:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">
+        © 2025 Little Florets School. All rights reserved. | Crafted with ❤️ for every child.
+      </div>
+      <div class="footer-bottom-badges">
+        <span class="footer-badge">🏅 NEP 2020 Aligned</span>
+        <span class="footer-badge">🏆 Top 100 Preschool</span>
+        <span class="footer-badge">🛡️ Child Safe School</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<a href="#home" class="scroll-top" title="Back to top">↑</a>
+
+</body>
+</html>
